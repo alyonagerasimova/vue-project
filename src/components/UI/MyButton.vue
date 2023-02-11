@@ -15,8 +15,8 @@ export default {
 <style scoped>
 .btn {
   background: none;
-  color: darkgreen;
+  color: darkblue;
   padding: 10px 15px;
-  border: 1px darkgreen solid;
+  border: 1px darkblue solid;
 }
 </style>

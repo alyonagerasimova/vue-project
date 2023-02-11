@@ -4,9 +4,13 @@
       <div><strong>Название поста: </strong> {{ post.title }}</div>
       <div><strong>Описание: </strong>{{ post.body }}</div>
     </div>
-   <div class="post-btns">
-     <my-button>Удалить</my-button>
-   </div>
+    <div class="post-btns">
+      <my-button
+          @click="$emit('remove', post)"
+      >
+        Удалить
+      </my-button>
+    </div>
   </div>
 
 </template>
@@ -27,12 +31,13 @@ export default {
 <style scoped>
 .post {
   padding: 15px;
-  border: 2px darkgreen solid;
+  border: 2px darkblue solid;
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
 }
-.post-btns{
+
+.post-btns {
 
 }
 </style>
