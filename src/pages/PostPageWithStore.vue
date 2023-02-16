@@ -32,18 +32,6 @@
     />
     <div v-else>Идет загрузка...</div>
     <div v-intersection="loadMorePosts" class="observer"></div>
-    <!--    <div class="page__wrapper">-->
-    <!--      <div-->
-    <!--          v-for="pageNum in totalPages"-->
-    <!--          key="pageNum"-->
-    <!--          class="page"-->
-    <!--          :class="{-->
-    <!--             'current-page': pageNum === page-->
-    <!--       }"-->
-    <!--      @click="changePage(pageNum)">-->
-    <!--        {{ pageNum }}-->
-    <!--      </div>-->
-    <!--    </div>-->
   </div>
 </template>
 
@@ -80,41 +68,6 @@ export default {
     showDialog() {
       this.dialogIsVisible = true;
     },
-    // async fetchPosts() {
-    //   try {
-    //     this.isPostLoading = true;
-    //     const response = await axios.get("https://jsonplaceholder.typicode.com/posts?", {
-    //       params: {
-    //         _limit: this.limit,
-    //         _page: this.page,
-    //       }
-    //     });
-    //     this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
-    //     this.posts = response.data;
-    //   } catch (e) {
-    //     alert("Ошибка! " + e);
-    //   } finally {
-    //     this.isPostLoading = false;
-    //   }
-    // },
-    // async loadMorePosts() {
-    //   try {
-    //     this.page += 1;
-    //     const response = await axios.get("https://jsonplaceholder.typicode.com/posts?", {
-    //       params: {
-    //         _limit: this.limit,
-    //         _page: this.page,
-    //       }
-    //     });
-    //     this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
-    //     this.posts = [...this.posts, ...response.data];
-    //   } catch (e) {
-    //     alert("Ошибка! " + e);
-    //   }
-    // }
-    // changePage(pageNum){
-    //   this.page = pageNum;
-    // }
   },
   mounted() {
     this.fetchPosts();
